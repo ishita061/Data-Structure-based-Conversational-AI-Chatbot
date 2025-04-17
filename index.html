@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AI Chatbot Interface</title>
-        <!-- Font Awesome for icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Link to custom CSS -->
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- Navbar -->
-        <div class="navbar">
-            <div class="nav-ai">
-                <!-- Left Arrow Button -->
-                <button class="back-button">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <!-- AI Image Placeholder -->
-                <div class="ai-image ai-photo"></div>
-                <!-- Lumen Info -->
-                <div class="ai-info">
-                    <span class="ai-name">Lumen</span>
-                    <span class="ai-status">Active</span>
-                </div>
-                <!-- Speaker Icon -->
-                <div class="speaker-icon">
-                    <i class="fa-solid fa-volume-up"></i>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header Section -->
+        <header class="chat-header">
+            <div class="header-left">
+                <!-- Back button to navigate to welcome.html -->
+                <a href="welcome.html" class="back-button">&larr;</a>
+                <img src="trans_bg1.png" alt="AI Profile" class="profile-image">
+                <div class="profile">
+                    <span class="profile-name">Lumen</span>
+                    <div class="status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
                 </div>
             </div>
+            <div class="header-right">
+                <div class="auth-links">
+                    <a href="login.html" class="login">Login</a> | <a href="#" class="signup">Sign Up</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Messages Section -->
+        <div class="chat-messages">
+            <div class="message bot">Hello! How can I assist you today?</div>
+            <div class="message user">Tell me about data structures!</div>
+            <div class="message bot">Sure! Data structures are techniques for organizing and storing data effectively.</div>
         </div>
 
-        <!-- Chat Container -->
-        <div class="chat-container">
-            <!-- Chat Messages will go here -->
-        </div>
-
-        <!-- Prompt Area -->
-        <div class="prompt-area">
-            <input type="text" class="message-input" placeholder="Type your message...">
+        <!-- Input Section -->
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message here..." />
+            <button class="microphone-button">
+                <i class="fas fa-microphone"></i>
+            </button>
             <button class="send-button">Send</button>
         </div>
-
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
+
+<!-- <div class="chat-messages">
+    <div class="message bot">Hello! How can I assist you today?</div>
+    <div class="message user">Tell me about data structures!</div>
+    <div class="message bot">Sure! Data structures are techniques for organizing and storing data effectively.</div>
+</div> -->
