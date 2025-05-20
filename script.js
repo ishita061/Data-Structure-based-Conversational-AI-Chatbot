@@ -41,7 +41,7 @@ function createMessageElement(type, sender, text) {
   messageDiv.appendChild(nameTag);
   messageDiv.appendChild(textNode);
   return messageDiv;
-
+}
 //BOT RESPONSE LOGIC
 function getBotReply(userText) {
   // Dummy response logic - replace with AI logic if needed
@@ -97,4 +97,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   chatBox.scrollTop = chatBox.scrollHeight;
 });
-}
