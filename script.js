@@ -55,7 +55,7 @@ function loginUser(event) {
   }
 }
 
-//IGNUP FUNCTION
+//SIGNUP FUNCTION
 function signupUser() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('signupPassword').value;
