@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="header-left">
+        <button class="back-button" onclick="window.location.href='login.html'">←</button>
+        <img src="https://img.freepik.com/premium-vector/cute-elephant-meditation-yoga-cartoon-vector-icon-illustration-animal-sport-icon-concept-isolated-premium-vector-flat-cartoon-style_1033579-103410.jpg" class="profile-image" alt="User">
+        <div class="profile">
+          <div class="profile-name">Lumen</div>
+          <div class="status"><span class="status-indicator"></span> Online</div>
+        </div>
+      </div>
+      <div class="auth-links"><a href="login.html">Logout</a></div>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message...">
+      <button class="microphone-button">🎤</button>
+      <button class="send-button" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
