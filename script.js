@@ -1,5 +1,5 @@
 
-// ---------------------- LOGIN FUNCTION ----------------------
+// LOGIN FUNCTION 
 function loginUser(event) {
   event.preventDefault();
   const username = document.getElementById('username').value;
@@ -13,7 +13,7 @@ function loginUser(event) {
   }
 }
 
-// ---------------------- SIGNUP FUNCTION ----------------------
+//SIGNUP FUNCTION
 function signupUser() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('signupPassword').value;
@@ -25,7 +25,7 @@ function signupUser() {
   }
 }
 
-// ---------------------- CREATE MESSAGE DOM ----------------------
+//CREATE MESSAGE DOM
 function createMessageElement(type, sender, text) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${type}`;
@@ -41,7 +41,7 @@ function createMessageElement(type, sender, text) {
   messageDiv.appendChild(nameTag);
   messageDiv.appendChild(textNode);
   return messageDiv;
-// ---------------------- LOGIN FUNCTION ----------------------
+//LOGIN FUNCTION
 function loginUser(event) {
   event.preventDefault();
   const username = document.getElementById('username').value;
@@ -55,7 +55,7 @@ function loginUser(event) {
   }
 }
 
-// ---------------------- SIGNUP FUNCTION ----------------------
+//IGNUP FUNCTION
 function signupUser() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('signupPassword').value;
@@ -67,7 +67,7 @@ function signupUser() {
   }
 }
 
-// ---------------------- CREATE MESSAGE DOM ----------------------
+//CREATE MESSAGE DOM
 function createMessageElement(type, sender, text) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${type}`;
@@ -85,7 +85,7 @@ function createMessageElement(type, sender, text) {
   return messageDiv;
 }
 
-// ---------------------- BOT RESPONSE LOGIC ----------------------
+//BOT RESPONSE LOGIC
 function getBotReply(userText) {
   // Dummy response logic - replace with AI logic if needed
   if (userText.toLowerCase().includes('hello')) {
@@ -94,7 +94,7 @@ function getBotReply(userText) {
   return "I'm here to help!";
 }
 
-// ---------------------- SEND MESSAGE FUNCTION ----------------------
+// SEND MESSAGE FUNCTION
 function sendMessage() {
   const input = document.getElementById('userInput');
   const text = input.value.trim();
@@ -121,14 +121,14 @@ function sendMessage() {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// ---------------------- SAVE CHAT HISTORY ----------------------
+//SAVE CHAT HISTORY
 function saveChat(type, sender, text) {
   const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
   chatHistory.push({ type, sender, text });
   localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
 }
 
-// ---------------------- LOAD CHAT HISTORY ON PAGE LOAD ----------------------
+//LOAD CHAT HISTORY ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', () => {
   const chatBox = document.getElementById('chatMessages');
   const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }
 
-// ---------------------- BOT RESPONSE LOGIC ----------------------
+//BOT RESPONSE LOGIC
 function getBotReply(userText) {
   // Dummy response logic - replace with AI logic if needed
   if (userText.toLowerCase().includes('hello')) {
@@ -152,7 +152,7 @@ function getBotReply(userText) {
   return "I'm here to help!";
 }
 
-// ---------------------- SEND MESSAGE FUNCTION ----------------------
+// SEND MESSAGE FUNCTION
 function sendMessage() {
   const input = document.getElementById('userInput');
   const text = input.value.trim();
@@ -179,14 +179,14 @@ function sendMessage() {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// ---------------------- SAVE CHAT HISTORY ----------------------
+//SAVE CHAT HISTORY
 function saveChat(type, sender, text) {
   const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
   chatHistory.push({ type, sender, text });
   localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
 }
 
-// ---------------------- LOAD CHAT HISTORY ON PAGE LOAD ----------------------
+//LOAD CHAT HISTORY ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', () => {
   const chatBox = document.getElementById('chatMessages');
   const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
