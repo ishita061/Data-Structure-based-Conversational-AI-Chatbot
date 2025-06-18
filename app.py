@@ -1,28 +1,53 @@
-from flask import Flask, request, jsonify
-from models.trie import Trie
-from models.model import Model
-from utils.helper import load_responses, extract_ip_addresses
+from flask import Flask, render_template, request, redirect, url_for, session
+import pandas as pd
+
 app = Flask(__name__)
-response_data = load_responses()
-response_trie = Trie()
-for ip, data in response_data.items():
-    response_trie.insert(ip, data)
+app.secret_key = "lumen-secret"  # Needed for session handling
 
-@app.route('/chat', methods=['POST'])
+# Load chatbot response dictionary
+df = pd.read_csv('chatbot_dataset.csv', encoding='windows-1252')
+df.columns = [col.strip().lower().replace(' ', '_') for col in df.columns]
+responses_dict = {row['user_input'].strip().lower(): row['bot_response'] for _, row in df.iterrows()}
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/signin')
+def signup():
+    return render_template('signin.html')
+
+@app.route('/chat')
 def chat():
-    user_input = request.json.get('message')
-    response = get_response(user_input)
-    
-    return jsonify({"response": response})
+    if 'username' in session:
+        return render_template('chat.html')
+    else:
+        return redirect(url_for('login'))
 
-def get_response(user_input):
-    ip_addresses = extract_ip_addresses(user_input)
+@app.route('/get', methods=['POST'])
+def get_bot_response():
+    user_input = request.form['msg'].strip().lower()
+    return {'reply': responses_dict.get(user_input, "Sorry, I don't understand that yet.")}
 
-    if ip_addresses:
-        responses = [response_trie.search(ip) for ip in ip_addresses]
-        return [response for response in responses if response] or ["No information found for the provided IP address."]
-    
-    return "Please provide a valid IP address."
+@app.route('/do_login', methods=['POST'])
+def do_login():
+    session['username'] = request.form['username']
+    return redirect(url_for('chat'))
+
+@app.route('/do_signup', methods=['POST'])
+def do_signup():
+    # Optional: Save users (currently just redirects)
+    session['username'] = request.form['username']
+    return redirect(url_for('chat'))
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
