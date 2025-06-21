@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Lumen Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1a1a2e, #3a0ca3, #6a0572);
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0 20px 30px;
+      text-align: center;
+      max-width: 600px;
+      color: #dddddd;
+    }
+
+    .start-btn {
+      padding: 14px 28px;
+      background: #c77dff;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background: #e0aaff;
+      transform: scale(1.05);
+    }
+
+    .auth-buttons {
+      margin-top: 25px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .auth-buttons a {
+      padding: 12px 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.3s ease;
+      font-weight: bold;
+    }
+
+    .auth-buttons a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">💬</div>
+
+  <h1>Lumen Chatbot</h1>
+  <p>Your intelligent, friendly chatbot companion. Get advice, answers, or just have a fun conversation!</p>
+
+  <button class="start-btn" onclick="showAuth()">Start Chatting</button>
+
+  <div class="auth-buttons" id="authButtons">
+    <a href="login.html">🔐 Login</a>
+    <a href="signup.html">📝 Sign Up</a>
+  </div>
+
+  <div class="footer">Made with ❤️ for Smart Conversations</div>
+
+  <script>
+    function showAuth() {
+      document.getElementById("authButtons").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
